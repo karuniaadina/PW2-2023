@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Genre;
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class GenreController extends Controller
@@ -13,10 +12,9 @@ class GenreController extends Controller
      */
     public function index()
     {
-        $genre = new Genre;
-        $genres = $genre->getAllGenres();
+        $genres = Genre::all();
 
-        return view('genres.index', ['genres' => $genres]);
+        return view('genres.index', compact('genres'));
     }
 
     /**
@@ -34,11 +32,10 @@ class GenreController extends Controller
     {
         //
     }
-
     /**
      * Display the specified resource.
      */
-    public function show(Movie $genre)
+    public function show(Genre $genre)
     {
         //
     }
@@ -46,7 +43,7 @@ class GenreController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Movie $genre)
+    public function edit(Genre $genre)
     {
         //
     }
@@ -54,7 +51,7 @@ class GenreController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Movie $genre)
+    public function update(Request $request, Genre $genre)
     {
         //
     }
@@ -64,6 +61,6 @@ class GenreController extends Controller
      */
     public function destroy(Genre $genre)
     {
-        //
+        
     }
 }
