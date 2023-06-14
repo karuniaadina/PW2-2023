@@ -56,7 +56,7 @@
                                 <td>{{ $review['review'] }}</td>
                                 <td>{{ $review['tanggal'] }}</td>
                                 <td>
-                                    <a href="" class="btn btn-sm btn-warning"> Edit</a>
+                                    <a href="/reviews/{{$review->id}}/edit" class="btn btn-sm btn-warning"> Edit</a>
                                     <form action="/reviews/{{$review->id}}" method="post">
                                         @csrf
                                         @method('DELETE')
